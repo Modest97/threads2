@@ -1,3 +1,4 @@
+//протестовано на 2,5,10,20 потоках до 10 видно виграш на 20 видно програш 
 #include <iostream>
 #include <thread>
 #include <ctime>
@@ -52,7 +53,7 @@ void main()
 			arr2[i][j] = rand() % 100;
 		}
 	}
-	int numberOfThreads = 10;
+	int numberOfThreads = 5;
 	thread* arr = new thread[numberOfThreads];
 	int from = 0;
 	int step = n/numberOfThreads;
@@ -74,8 +75,11 @@ void main()
 		}
 		cout << endl;
 	}*/
-
-	/* start_time = clock();
+	from = 0;
+	
+	 to = step;
+	 start_time = clock();
+	 
 	for (int i = 0;i < numberOfThreads;++i)
 	{
 		arr[i] = thread(subtraction, arr1, arr2, res1, from, to, n);
@@ -86,7 +90,7 @@ void main()
 	
 	
 
-		cout << (float)clock() - start_time << endl;*/
+	cout << "subtraction time for n=5000  and numberof threads=" << numberOfThreads << " " << (float)clock() - start_time << endl;
 
 
 
